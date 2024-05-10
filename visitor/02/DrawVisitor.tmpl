@@ -1,0 +1,8 @@
+public class $className implements ShapeVisitor {
+#for $shape in $shapes
+    @Override
+    public void visit($shape shape) {
+        System.out.println("Desenhando um " + shape.getClass().getSimpleName() + ".");
+    }
+#end for
+}

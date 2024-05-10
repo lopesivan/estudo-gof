@@ -1,0 +1,14 @@
+public class $className {
+    public static void main(String[] args) {
+        Shape[] shapes = {
+#for $index in range(len($shapes))
+            new ${shapes[$index]}(5)${',' if $index < len($shapes) - 1 else ''}
+#end for
+		};
+        ShapeVisitor visitor = new DrawVisitor();
+
+        for (Shape shape : shapes) {
+            shape.accept(visitor);
+        }
+    }
+}

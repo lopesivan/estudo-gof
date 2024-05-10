@@ -1,0 +1,9 @@
+shapes:
+  - Circle
+  - Square
+  - Triangle
+visitors:
+  - DrawVisitor
+mainClass: Main
+shapeInterface: Shape
+visitorInterface: ShapeVisitor

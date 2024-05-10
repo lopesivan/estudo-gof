@@ -1,4 +1,18 @@
-Para ilustrar o padrão Visitor de forma simples, considere um sistema de figuras geométricas onde você deseja aplicar diferentes operações (como desenhar e calcular a área) sem alterar as classes dessas figuras. Aqui está um exemplo em Java:
+O padrão de design Visitor permite que você adicione
+novas operações a objetos sem alterar as classes desses
+objetos. Ele funciona separando um algoritmo da estrutura de um
+objeto, utilizando um método de "visita" que fornece a lógica
+específica para cada tipo de objeto visitado. Essencialmente,
+o Visitor permite aplicar operações a um conjunto de objetos
+de diferentes classes por meio de uma interface comum, o que
+é útil para operações complexas e estruturas de dados
+variadas, sem acoplar a lógica à estrutura dos dados.
+
+Para ilustrar o padrão Visitor de forma simples, considere
+um sistema de figuras geométricas onde você deseja aplicar
+diferentes operações (como desenhar e calcular a área)
+sem alterar as classes dessas figuras. Aqui está um exemplo
+em Java:
 
 ```java
 // Interface Visitor
@@ -67,10 +81,12 @@ public class Main {
 ```
 
 Neste exemplo:
+
 - **ShapeVisitor**: Define as operações (`visit`) para cada tipo de forma (`Circle`, `Square`).
 - **Shape**: Interface comum que todas as formas implementam, permitindo a aceitação de um visitor (`accept`).
 - **Circle** e **Square**: Classes concretas de formas que implementam a interface `Shape`.
 - **DrawVisitor**: Um visitor concreto que implementa a lógica para desenhar cada tipo de forma.
 - **Main**: Demonstra como aplicar o visitor a um array de formas.
 
-Esse design permite que você adicione novas operações (outros visitors) sem alterar as classes das formas.
+Esse design permite que você adicione novas operações
+(outros visitors) sem alterar as classes das formas.

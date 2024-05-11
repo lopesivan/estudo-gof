@@ -16,18 +16,18 @@ em Java:
 
 ```java
 // Interface Visitor
-public interface ShapeVisitor {
+public interface ShapeVisitor {              // IVisitor
     void visit(Circle circle);
     void visit(Square square);
 }
 
 // Interface Shape
-public interface Shape {
+public interface Shape {                    //IElements
     void accept(ShapeVisitor visitor);
 }
 
 // Circle implementa Shape
-public class Circle implements Shape {
+public class Circle implements Shape {       //Element1
     public double radius;
 
     public Circle(double radius) {
@@ -41,7 +41,7 @@ public class Circle implements Shape {
 }
 
 // Square implementa Shape
-public class Square implements Shape {
+public class Square implements Shape {      //Element1
     public double side;
 
     public Square(double side) {

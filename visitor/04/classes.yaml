@@ -1,12 +1,11 @@
-shapes:
+IElements: Shape
+Element:
   - name: Circle
     paramName: radius
   - name: Square
     paramName: side
   - name: Triangle
     paramName: side
-visitors:
-  - DrawVisitor
-mainClass: Main
-shapeInterface: Shape
-visitorInterface: ShapeVisitor
+IVisitor: ShapeVisitor
+Visitor: DrawVisitor
+main: Main

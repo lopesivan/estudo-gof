@@ -6,41 +6,38 @@ with open("classes.yaml", "r") as file:
     data = yaml.safe_load(file)
 
 
-# Função para renderizar e salvar os templates
+# Função para renderizar e imprimir os templates
 def render_and_save(template_file, output_file, context):
     with open(template_file, "r") as f:
         template_content = f.read()
-    template = Template(template_content, searchList=[context])
+    template = Template(template_content, searchList=[{"data": context}])
+    # Aqui, vamos imprimir para demonstração, mas você pode querer salvar em um arquivo
     print("FILE:", output_file)
     print(str(template))
 
 
-# Gerar Shape.java
-render_and_save("Shape.tmpl", "Shape.java", {"className": data["shapeInterface"]})
+# Gerar o arquivo para IVisitor, passando todo o contexto do YAML
+render_and_save("IVisitor.tmpl", f"{data['IVisitor']}.java", data)
+
 
 # Gerar Circle.java, Square.java, Triangle.java, etc.
-for shape in data["shapes"]:
-    render_and_save(
-        "ShapeClass.tmpl",
-        f"{shape['name']}.java",
-        {"className": shape["name"], "paramName": shape["paramName"]},
-    )
+for e in data["Element"]:
+    context = {
+        "IElements": data["IElements"],
+        "IVisitor": data["IVisitor"],
+        "classname": e["name"],
+        "paramName": e["paramName"],
+    }
+    render_and_save("Element.tmpl", f"{e['name']}.java", context)
 
-# Gerar ShapeVisitor.java
-render_and_save(
-    "ShapeVisitor.tmpl",
-    "ShapeVisitor.java",
-    {"className": data["visitorInterface"], "shapes": data["shapes"]},
-)
 
-# Gerar DrawVisitor.java
-render_and_save(
-    "DrawVisitor.tmpl",
-    "DrawVisitor.java",
-    {"className": data["visitors"][0], "shapes": data["shapes"]},
-)
+# Gerar o arquivo para IElements, passando todo o contexto do YAML
+render_and_save("IElements.tmpl", f"{data['IElements']}.java", data)
 
-# Gerar Main.java
-render_and_save(
-    "Main.tmpl", "Main.java", {"className": data["mainClass"], "shapes": data["shapes"]}
-)
+
+# Gerar o arquivo para Visitor, passando todo o contexto do YAML
+render_and_save("Visitor.tmpl", f"{data['Visitor']}.java", data)
+
+
+# Gerar o arquivo Main, passando todo o contexto do YAML
+render_and_save("Main.tmpl", f"{data['main']}.java", data)

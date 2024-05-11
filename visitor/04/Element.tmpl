@@ -1,0 +1,13 @@
+// $data['classname'] implementa Shape
+public class $data['classname'] implements $data['IElements'] {
+    public double ${data['paramName']};
+
+    public ${data['classname']}(double ${data['paramName']}) {
+        this.${data['paramName']} = ${data['paramName']};
+    }
+
+    @Override
+    public void accept($data['IVisitor'] visitor) {
+        visitor.visit(this);
+    }
+}

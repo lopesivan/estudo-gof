@@ -1,0 +1,6 @@
+// Interface Visitor
+public interface $data['IVisitor'] {
+#for $element in $data['Element']
+    void visit($element.name $element.name.lower());
+#end for
+}

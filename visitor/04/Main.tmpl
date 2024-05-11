@@ -1,14 +1,15 @@
-public class $className {
+// Classe Main para demonstrar o uso do Visitor
+public class Main {
     public static void main(String[] args) {
-        Shape[] shapes = {
-#for $index in range(len($shapes))
-            new ${shapes[$index]['name']}(5)${',' if $index < len($shapes) - 1 else ''}
+        ${data['IElements']}[] ${data['IElements'].lower()}s = {
+#for $index in range(len($data['Element']))
+            new ${data['Element'][$index]['name']}(5)${',' if $index < len($data['Element']) - 1 else ''}
 #end for
         };
-        DrawVisitor drawVisitor = new DrawVisitor();
+        ${data['Visitor']} ${data['Visitor'].lower()} = new ${data['Visitor']}();
 
-        for (Shape shape : shapes) {
-            shape.accept(drawVisitor);
+        for (${data['IElements']} ${data['IElements'].lower()} : ${data['IElements'].lower()}s) {
+            ${data['IElements'].lower()}.accept(${data['Visitor'].lower()});
         }
     }
 }

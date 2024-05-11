@@ -13,5 +13,5 @@ clean:
 	rm *.java *.class
 
 test: Main.java
-	java Main.java
+	javac Main.java && java Main
 

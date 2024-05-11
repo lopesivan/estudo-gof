@@ -1,0 +1,8 @@
+public class $className implements ShapeVisitor {
+#for $shape in $shapes
+    @Override
+    public void visit($shape['name'] $shape['name'].lower()) {
+        System.out.println("Desenhando um  ${shape['name']} " + " de dimensão "+ ${shape['name'].lower()}.${shape['paramName']} + ".");
+    }
+#end for
+}

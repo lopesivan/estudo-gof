@@ -1,8 +1,8 @@
-public class RunBashScriptCommand implements Command
+public class BashScriptCommand implements Command
 {
     private String scriptPath;
 
-    public RunBashScriptCommand (String scriptPath)
+    public BashScriptCommand (String scriptPath)
     {
         this.scriptPath = scriptPath;
     }

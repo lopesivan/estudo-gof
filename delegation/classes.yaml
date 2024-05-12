@@ -1,0 +1,8 @@
+delegator:
+  - name: Window
+    create_delegate: shape
+delegate:
+  - Circle
+  - Rectangle
+
+main: main

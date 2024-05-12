@@ -1,0 +1,6 @@
+ICommand: Command
+Commands:
+  - name: BashScriptCommand
+    scriptPath: "./xpto.sh"
+Invoker: RemoteControl
+main: Main

@@ -1,0 +1,19 @@
+ICommand: Command
+Commands:
+  - name: LightOnCommand
+    target: Light
+    action: turnOn
+  - name: LightOffCommand
+    target: Light
+    action: turnOff
+  - name: FanOnCommand
+    target: Fan
+    action: turnOn
+  - name: FanOffCommand
+    target: Fan
+    action: turnOff
+Receivers:
+  - Object1: Light
+  - Object2: Fan
+Invoker: RemoteControl
+main: Main

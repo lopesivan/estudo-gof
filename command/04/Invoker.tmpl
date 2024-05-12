@@ -1,0 +1,12 @@
+// Classe Invoker
+public class $data['Invoker'] {
+    private $data['ICommand'] command;
+
+    public void setCommand($data['ICommand'] command) {
+        this.command = command;
+    }
+
+    public void pressButton() {
+        command.execute();
+    }
+}

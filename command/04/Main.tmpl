@@ -1,0 +1,9 @@
+// Classe Main para demonstrar o uso do Command
+public class Main {
+    public static void main(String[] args) {
+        $data['ICommand'] script = new ${data['Commands'][0]['name']}("${data['Commands'][0]['scriptPath']}");
+        $data['Invoker'] remote = new $data['Invoker']();
+        remote.setCommand(script);
+        remote.pressButton();
+    }
+}

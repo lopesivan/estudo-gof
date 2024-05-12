@@ -1,0 +1,40 @@
+IElement: Shape
+Elements:
+  - name: Circle
+    paramName: radius
+  - name: Square
+    paramName: side
+
+Visitor:
+  - Draw
+  - Plot
+main: Main
+
+
+IElement.tmpl
+Elements.tmpl
+IVisitor.tmpl
+Visitor.tmpl
+main.tmpl
+
+
+
+
+          IShape.java
+             ^
+             |
+        +----+--------+
+        |             |
+      Square.java    Circle.java
+
+
+
+       IShapeVisitor.java
+             ^
+             |
+        +----+--------+
+        |             |
+DrawVisitor.java      PlotVisitor.java
+
+
+

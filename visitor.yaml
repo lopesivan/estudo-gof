@@ -1,0 +1,12 @@
+IElement: Shape
+Elements:
+  - name: Circle
+    paramName: radius
+  - name: Square
+    paramName: side
+
+IVisitor: ShapeVisitor
+Visitor:
+  - DrawVisitor
+  - PlotVisitor
+main: Main
